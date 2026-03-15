@@ -15,7 +15,7 @@
 void createInstance(VkInstance* instanceHandle){
     VkApplicationInfo appInfo = {
         .sType              = VK_STRUCTURE_TYPE_APPLICATION_INFO,
-        .pNext              = EJS_NULL;
+        .pNext              = EJS_NULL,
         .pApplicationName   = "Hello Triangle",
         .applicationVersion = VK_MAKE_VERSION(1, 0, 0),
         .pEngineName        = "No Engine",
