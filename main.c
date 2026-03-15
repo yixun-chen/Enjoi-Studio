@@ -66,7 +66,7 @@ void cleanup(GLFWwindow* windowHandle, VkInstance instanceHandle){
 	glfwTerminate();
 }
 
-void run(){
+void run(void){
 	GLFWwindow* window;		// window ptr stores the window's handle created by glfw
 	initWindow(&window);
 
@@ -78,7 +78,7 @@ void run(){
 	cleanup(window, instance);
 }
 
-int main(){
+int main(void){
 	run();
 	
 	return EXIT_SUCCESS;
