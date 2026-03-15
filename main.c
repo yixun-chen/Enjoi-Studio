@@ -1,3 +1,7 @@
+#ifndef EJS_NULL
+    #define EJS_NULL ((void*)0)
+#endif
+/*-------------------------------------------------------------------------------------------*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <stdint.h>
@@ -31,7 +35,7 @@ void createInstance(VkInstance* instanceHandle){
         .enabledLayerCount          = 0,
     };
 
-    if(vkCreateInstance(&createInfo, NULL, instanceHandle) != VK_SUCCESS){
+    if(vkCreateInstance(&createInfo, EJS_NULL, instanceHandle) != VK_SUCCESS){
         fprintf(stderr, "Failed to create instance!");
         exit(1);
     }
@@ -43,7 +47,7 @@ void initWindow(GLFWwindow** window){
 	glfwWindowHint(GLFW_CLIENT_API, GLFW_NO_API);
 	glfwWindowHint(GLFW_RESIZABLE, GLFW_FALSE);
 
-	*window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", NULL, NULL);
+	*window = glfwCreateWindow(WIDTH, HEIGHT, "Vulkan", EJS_NULL, EJS_NULL);
 }
 
 void initVulkan(VkInstance* instanceHandle){
@@ -59,7 +63,7 @@ void mainLoop(GLFWwindow* window){
 }
 
 void cleanup(GLFWwindow* windowHandle, VkInstance instanceHandle){
-    vkDestroyInstance(instanceHandle, NULL);
+    vkDestroyInstance(instanceHandle, EJS_NULL);
 
 	glfwDestroyWindow(windowHandle);
 
